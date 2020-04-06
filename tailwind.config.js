@@ -12,6 +12,13 @@ module.exports = {
         white: '#f7f7f7',
         primary: '#ffe0e0',
       },
+      height: {
+        x_large: '18rem',
+        xx_large: '22rem',
+        xxx_large: '30rem',
+        xxxx_large: '36rem',
+        ...defaultTheme.height,
+      },
     },
   },
   variants: {},

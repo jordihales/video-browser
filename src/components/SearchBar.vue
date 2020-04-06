@@ -1,6 +1,14 @@
 <template>
-  <div>
-    <input @input="onInput" />
+  <div class="container">
+    <div class="pt-12">
+      <div class="mt-1 mb-12 relative rounded-lg shadow-md">
+        <input
+          class="form-input py-4 block w-full pl-6 pr-12 sm:text-md sm:leading-5"
+          placeholder="Search"
+          @input="onInput"
+        />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -16,12 +24,4 @@ export default {
 </script>
 
 <style scoped>
-input {
-  width: 75%;
-}
-
-div {
-  text-align: center;
-  margin: 1.25rem;
-}
 </style>

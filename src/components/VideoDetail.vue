@@ -1,32 +1,37 @@
 <template>
-  <div v-if="video" class="col-md-8">
-    <div class="details">
-      <div class="embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" :src="videoUrl" />
+  <div class="container">
+    <div
+      v-if="video"
+      class="grid grid-cols-1 mb-6 max-w-screen-xl mx-auto h-xxxx_large"
+    >
+      <div class="rounded overflow-hidden shadow-lg">
+        <iframe
+          class="w-full h-xxx_large"
+          :src="videoUrl"
+        />
+        <div class="px-6 py-4 h-64">
+          <div class="font-bold text-xl mb-2">{{ video.snippet.title }}</div>
+          <p class="text-gray-700 text-base">
+            {{ video.snippet.description }}
+          </p>
+        </div>
       </div>
-      <h4>{{ video.snippet.title }}</h4>
-      <p>{{ video.snippet.description }}</p>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'VideoDetail',
-  props: ['video'],
+  name: "VideoDetail",
+  props: ["video"],
   computed: {
     videoUrl() {
-      const { videoId } = this.video.id
-      return `https://www.youtube.com/embed/${{ videoId }}`
+      const { videoId } = this.video.id;
+      return `https://www.youtube.com/embed/${{ videoId }}`;
     }
   }
-}
+};
 </script>
 
 <style scoped>
-.details {
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-}
 </style>
